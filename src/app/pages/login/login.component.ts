@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private snack:MatSnackBar,
-    private loginService:LoginService) { }
+    private loginService:LoginService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -41,11 +43,29 @@ export class LoginComponent implements OnInit {
 
         this.loginService.loginUser(data.token);
         this.loginService.getUsuarioActual().subscribe((user:any) => {
+          this.loginService.setUser(user);
           console.log(user);
+
+          if(this.loginService.getUserRol() == 'ROLE_ADMIN'){
+            //dashboard admin
+            //window.location.href = '/admin';
+            this.router.navigate(['admin']);
+            this.loginService.loginStatusSubjec.next(true);
+          }else if(this.loginService.getUserRol() == 'ROLE_USER'){
+            //dashboard user
+            //window.location.href = '/user-dashboard';
+            this.router.navigate(['user-dashboard']);
+            this.loginService.loginStatusSubjec.next(true);
+          }else{
+            this.loginService.logOut();
+          }
         })
       },
       (error) => {
         console.log(error);
+        this.snack.open('Detalles invalidos, vuelva a intentarlo', 'Aceptar', {
+          duration: 3000
+        })
       }
     )
   }

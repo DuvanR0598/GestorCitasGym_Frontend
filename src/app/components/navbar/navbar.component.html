@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="color-navbar">
     <a [routerLink] = "'/'"
         mat-icon-button class="example-icon" arial-label="example icon-button with menu icon">
         <mat-icon>fitness_center</mat-icon>
@@ -6,11 +6,32 @@
     <span>Gimnasio EnerGym</span>
     <span class="example-spacer"></span>
 
-    <a [routerLink] = "'login'" mat-icon-button class="example-icon favorite-icon" 
+    <a 
+    *ngIf = "!isLoggedIn"
+    [routerLink] = "'/login'" 
+    mat-icon-button class="example-icon favorite-icon" 
     aria-label="Example icon-button with heart icon"> Iniciar sesión </a>
 
-    <a [routerLink] = "'signup'" mat-icon-button class="example-icon favorite-icon mr20 ml70" 
+    <a 
+    *ngIf = "!isLoggedIn"
+    [routerLink] = "'/signup'" 
+    mat-icon-button class="example-icon favorite-icon mr20 ml70" 
     aria-label="Example icon-button with heart icon"> Registrarse </a>
 
+    <a 
+    *ngIf = "isLoggedIn"
+    (click) = "cerrarSesion()" 
+    style="margin-right: 50px;"
+    mat-icon-button class="example-icon favorite-icon" 
+    aria-label="Example icon-button with heart icon"> Cerrar sesión </a>
+
+    <button
+    *ngIf = "isLoggedIn && user"
+    mat-button 
+    style="margin-right: 10px;"
+    class="example-icon favorite-icon" 
+    aria-label="Example icon-button with heart icon"> 
+    {{user.username}}
+    </button>
 
 </mat-toolbar>

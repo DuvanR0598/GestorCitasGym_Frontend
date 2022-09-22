@@ -23,6 +23,11 @@ import { AuthInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
+import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
     HomeComponent,
     DashboardComponent,
     UserDashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
+    VerCategoriasComponent,
+    AddCategoriasComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +56,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

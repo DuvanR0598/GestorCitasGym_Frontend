@@ -1,3 +1,7 @@
+import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { NormalGuard } from './services/normal.guard';
 import { AdminGuard } from './services/admin.guards';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
@@ -31,10 +35,26 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
+    //children: admin/profile ---> lo que hace es llevarnos a uno de sus componentes hijos
     path:'admin',
     component:DashboardComponent,
-    pathMatch:'full',
-    canActivate:[AdminGuard]
+    canActivate:[AdminGuard],
+    children:[{
+      path: 'profile',
+      component: ProfileComponent
+    },
+    {
+      path: '',
+      component: WelcomeComponent
+    },
+    {
+      path: 'categorias',
+      component: VerCategoriasComponent
+    },
+    {
+      path:'add-categorias',
+      component:AddCategoriasComponent,
+    }]
   },
   {
     path:'user-dashboard',

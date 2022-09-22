@@ -1,3 +1,4 @@
+import { LoginService } from 'src/app/services/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user:any = null;
+
+  constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
+    this.user = this.loginService.getUser(); //obtenemos el usuario actual logeado en el sistema
   }
 
 }

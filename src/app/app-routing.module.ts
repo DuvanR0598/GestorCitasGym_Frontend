@@ -1,4 +1,4 @@
-import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -11,6 +11,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { VerCitasComponent } from './pages/admin/ver-citas/ver-citas.component';
+import { AddCitasComponent } from './pages/admin/add-citas/add-citas.component';
 
 const routes: Routes = [
   /**
@@ -53,7 +55,15 @@ const routes: Routes = [
     },
     {
       path:'add-categorias',
-      component:AddCategoriasComponent,
+      component:AddCategoriasComponent
+    },
+    {
+      path:'citas-grupales',
+      component:VerCitasComponent
+    },
+    {
+      path:'add-cita',
+      component:AddCitasComponent
     }]
   },
   {

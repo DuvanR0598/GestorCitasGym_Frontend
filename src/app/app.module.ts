@@ -28,6 +28,9 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { VerCitasComponent } from './pages/admin/ver-citas/ver-citas.component';
+import { AddCitasComponent } from './pages/admin/add-citas/add-citas.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categor
     SidebarComponent,
     WelcomeComponent,
     VerCategoriasComponent,
-    AddCategoriasComponent
+    AddCategoriasComponent,
+    VerCitasComponent,
+    AddCitasComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categor
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

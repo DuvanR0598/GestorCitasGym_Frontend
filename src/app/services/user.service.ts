@@ -13,4 +13,8 @@ export class UserService {
     return this.httpClient.post(`${baserUrl}/registrar`, user,
     {responseType: 'text'});
   }
+
+  public listarUsuarios(){
+    return this.httpClient.get(`${baserUrl}/usuarios/lista-usuarios`);
+  }
 }

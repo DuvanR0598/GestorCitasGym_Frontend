@@ -15,5 +15,4 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.loginService.getUser(); //obtenemos el usuario actual logeado en el sistema
   }
-
 }

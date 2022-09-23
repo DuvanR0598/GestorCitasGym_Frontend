@@ -5,8 +5,8 @@
                 <div class="container text-center">
                     <img src="../../../assets/icon.png" width="100" height="100">
                 </div>
-
-                <h1 class="text-center"> Registrate Aqui </h1>
+                <h1 class="text-center"> ¿Aún no haces parte de EnerGym?</h1>
+                <h2 class="text-center"> ¡Registrate ahora! </h2>
                 
                 <form (ngSubmit) = "formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
@@ -31,7 +31,7 @@
 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Fecha de nacimiento</mat-label>
-                        <input required [(ngModel)] = "user.fechaNacimiento" name="fechaNacimiento" matInput placeholder="Digite su fecha de nacimiento">
+                        <input required [(ngModel)] = "user.fechaNacimiento" type="date" name="fechaNacimiento" matInput placeholder="Digite su fecha de nacimiento">
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">

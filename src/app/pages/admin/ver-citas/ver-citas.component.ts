@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2';
 import { CitasService } from './../../../services/citas.service';
 import { Component, OnInit } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-ver-citas',

@@ -1,3 +1,5 @@
+import { LoadCitaComponent } from './pages/user/load-cita/load-cita.component';
+import { ActualizarCitaComponent } from './pages/admin/actualizar-cita/actualizar-cita.component';
  import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
@@ -64,13 +66,22 @@ const routes: Routes = [
     {
       path:'add-cita',
       component:AddCitasComponent
+    },
+    {
+      path:'cita/:idCita',
+      component:ActualizarCitaComponent
     }]
   },
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
-    pathMatch:'full',
-    canActivate: [NormalGuard]
+    canActivate: [NormalGuard],
+    children : [{
+      path:':idCat',
+      component:LoadCitaComponent
+    }
+
+    ]
   }
 ];
 

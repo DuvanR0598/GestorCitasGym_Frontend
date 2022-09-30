@@ -20,4 +20,12 @@ export class CitasService {
   public eliminarCita(idCita:any){
     return this.http.delete(`${baserUrl}/citas/eliminar-cita/${idCita}`);
   }
+
+  public obtenerCita(idCita:any){
+    return this.http.get(`${baserUrl}/citas/buscar-cita/${idCita}`);
+  }
+
+  public actualizarCita(cita:any){
+    return this.http.put(`${baserUrl}/citas/actualizar-cita`, cita)
+  }
 }

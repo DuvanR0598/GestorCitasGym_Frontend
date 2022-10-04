@@ -1,2 +1,2 @@
-let baseUrl = 'http://localhost:8083'
-export default baseUrl;
+let baserUrl = 'http://localhost:8083'
+export default baserUrl;

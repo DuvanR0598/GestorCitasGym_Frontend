@@ -7,7 +7,7 @@
       <button mat-list-item>
         <mat-icon mat-list-icon>quiz</mat-icon>Citas
       </button>
-      <button mat-list-item *ngFor = "let c of categorias">
+      <button [routerLink] = "'/user-dashboard/'+ c.idCategoria" mat-list-item *ngFor = "let c of categorias">
         <mat-icon mat-list-icon>account_circle</mat-icon> {{ c.titulo }}
       </button>
     </mat-action-list>

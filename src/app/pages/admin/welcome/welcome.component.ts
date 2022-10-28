@@ -19,7 +19,7 @@ export class WelcomeComponent implements OnInit {
       let dowloadURL = window.URL.createObjectURL(data)
       let link = document.createElement('a')
       link.href = dowloadURL
-      link.download = "usuariosList.pdf"
+      link.download = "Usuarios_Energym.pdf"
       link.click()
     })
   }

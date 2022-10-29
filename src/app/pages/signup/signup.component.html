@@ -25,8 +25,11 @@
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Genero</mat-label>
-                        <input required [(ngModel)] = "user.genero" name="genero" matInput placeholder="Digite su genero">
+                        <mat-label >Genero</mat-label>
+                            <mat-select required [(ngModel)] = "user.genero" name="genero">
+                                <mat-option value="m">Masculino</mat-option>
+                                <mat-option value="f">Femenino</mat-option>
+                            </mat-select>
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">

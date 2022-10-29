@@ -23,6 +23,31 @@
                     matInput>
                 </mat-form-field>
 
+        
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Titulo de la cita</mat-label>
+                    <input
+                    [(ngModel)] = "citaData.tituloCita"
+                    type="text"
+                    name="numeroDePreguntas"
+                    placeholder="Digite el titulo de la cita"
+                    required
+                    matInput>
+                </mat-form-field>
+
+
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <textarea
+                    required
+                    name="descripcion"
+                    matInput
+                    placeholder="Digite la descripción de la cita"
+                    rows="15"
+                    [(ngModel)] = "citaData.descripcionC">
+                    </textarea>
+                  </mat-form-field>
+
                 <mat-form-field class="w100" appearance="fill">
                     <mat-label>Fecha</mat-label>
                     <input
@@ -49,16 +74,16 @@
                     </div>
 
                     <div class="col-md-6">
-                    <mat-form-field class="w100" appearance="fill">
-                        <mat-label>Duración</mat-label>
-                        <input
-                        [(ngModel)] = "citaData.duracion"
-                        type="text"
-                        name="numeroDePreguntas"
-                        placeholder="Digite la duración de la clase"
-                        required
-                        matInput>
-                    </mat-form-field>
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Duración</mat-label>
+                            <input
+                            [(ngModel)] = "citaData.duracion"
+                            type="text"
+                            name="numeroDePreguntas"
+                            placeholder="Digite la duración de la clase"
+                            required
+                            matInput>
+                        </mat-form-field>
                     </div>
                 </div>
 

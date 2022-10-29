@@ -29,7 +29,8 @@ export class LoadCitaComponent implements OnInit {
         }
       )
     }else{
-      console.log("Cargando una cita en específico")
+      console.log("Cargando una cita en específico");
+      this.citas = [];
     }
   }
 

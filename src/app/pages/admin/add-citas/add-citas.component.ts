@@ -18,6 +18,8 @@ export class AddCitasComponent implements OnInit {
 
   citaData = {
     idCita: '',
+    tituloCita: '',
+    descripcionC: '',
     fecha: '',
     hora: '',
     duracion: '',
@@ -65,6 +67,8 @@ export class AddCitasComponent implements OnInit {
         //Despues de guardar la cita, reseteamos los campos para poder insertar una nueva cita
         this.citaData = {
           idCita : '',
+          tituloCita: '',
+          descripcionC: '',
           fecha : '',
           hora : '',
           duracion : '',

@@ -34,6 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ActualizarCitaComponent } from './pages/admin/actualizar-cita/actualizar-cita.component';
 import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
 import { LoadCitaComponent } from './pages/user/load-cita/load-cita.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { LoadCitaComponent } from './pages/user/load-cita/load-cita.component';
     MatIconModule,
     MatListModule,
     MatSelectModule,
+    MatMenuModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

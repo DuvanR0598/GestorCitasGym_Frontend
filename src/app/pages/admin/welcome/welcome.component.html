@@ -1,1 +1,32 @@
-<h1>Bienvenido al panel de administrador</h1>
+<mat-card class="mt20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card-header>
+                    <mat-card-title>
+                        Bienvenido al panel de administrador
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-subtitle>Panel de administrador</mat-card-subtitle>
+                <mat-card-content class="ml30">
+                    <h1></h1>
+                    <p></p>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <h1>Sus funciones : </h1>
+                    <ul>
+                        <li>Gestionar las categorías</li>
+                        <li>Gestionar las citas</li>
+                        <li>Asignar citas a distintas categorías</li>
+                        <li>Descargar reportes</li>
+                    </ul>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <mat-card-actions class="text-left">
+                        <button (click)="getUsuariosPDF()" class="background-button" mat-raised-button>Reporte de usuarios PDF</button>
+                    </mat-card-actions>
+                </mat-card-content>
+            </div>
+        </div>
+    </div>
+</mat-card>

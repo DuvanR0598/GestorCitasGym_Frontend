@@ -1,6 +1,7 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoriaService } from './../../../services/categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-sidebar-user',
@@ -12,7 +13,8 @@ export class SidebarComponent implements OnInit {
   categorias:any;
 
   constructor(private categoriaService:CategoriaService,
-    private snack:MatSnackBar) { }
+    private snack:MatSnackBar,
+    public login:LoginService) { }
 
   ngOnInit(): void {
     this.categoriaService.listarCategorias().subscribe(
@@ -26,6 +28,11 @@ export class SidebarComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  public cerrarSesion(){
+    this.login.logOut();
+    window.location.reload();
   }
 
 }

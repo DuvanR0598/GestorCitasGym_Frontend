@@ -19,7 +19,7 @@
         <button mat-list-item routerLink="/admin/add-cita">
             <mat-icon mat-list-icon>add</mat-icon> Crear cita grupal
         </button>
-        <button mat-list-item routerLink="/admin/add-cita">
+        <button (click) = "cerrarSesion()" mat-list-item routerLink="/admin">
             <mat-icon mat-list-icon>logout</mat-icon> Salir
         </button>
     </mat-action-list>

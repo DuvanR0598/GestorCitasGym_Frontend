@@ -1,38 +1,55 @@
-<mat-toolbar class="color-navbar">
-    <a [routerLink] = "'/'"
-        mat-icon-button class="example-icon" arial-label="example icon-button with menu icon">
-        <mat-icon>fitness_center</mat-icon>
-    </a>
-    <span>Gimnasio EnerGym</span>
-    <span class="example-spacer"></span>
-
-    <a 
-    *ngIf = "!isLoggedIn"
-    [routerLink] = "'/login'" 
-    mat-icon-button class="example-icon favorite-icon" 
-    aria-label="Example icon-button with heart icon"> Iniciar sesión </a>
-
-    <a 
-    *ngIf = "!isLoggedIn"
-    [routerLink] = "'/signup'" 
-    mat-icon-button class="example-icon favorite-icon mr20 ml70" 
-    aria-label="Example icon-button with heart icon"> Registrarse </a>
-
-    <a 
-    *ngIf = "isLoggedIn"
-    (click) = "cerrarSesion()" 
-    style="margin-right: 50px;"
-    mat-icon-button class="example-icon favorite-icon" 
-    aria-label="Example icon-button with heart icon"> Cerrar sesión </a>
-
-    <button
-    *ngIf = "isLoggedIn && user"
-    mat-button 
-    style="margin-right: 10px;"
-    class="example-icon favorite-icon"
-    routerLink="/admin" 
-    aria-label="Example icon-button with heart icon"> 
-    {{user.username}}
-    </button>
-
-</mat-toolbar>
+<div class="body">
+    <header class="header">
+        <div class="menu__wrapper">
+            <div class="menu__bar">
+                <a href="#" title="Home" aria-label="home" class="logo">
+                    <img src="../../../assets/logoEnergym_vert.png" alt="logo">
+                </a>
+                <nav>
+                    <ul class="navigation hide">
+                        <li>
+                            <a href="#devs" title="Developers">
+                                Sedes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pricing" title="Pricing">
+                                Servicios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#docs" title="Docs">
+                                Planes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#blog" title="Blog">
+                                Clases
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="action-buttons hide">
+                <a *ngIf = "!isLoggedIn"
+                    [routerLink] = "'/signup'" title="Log in" class="secondary">
+                    Suscribirse
+                </a>
+                <a *ngIf = "!isLoggedIn"
+                    [routerLink] = "'/login'" title="Sign up" class="primary">
+                    Iniciar Sesión
+                </a>
+            </div>
+            <button aria-label="Open menu" class="burger-menu" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 6l16 0" />
+                    <path d="M4 12l16 0" />
+                    <path d="M4 18l16 0" />
+                </svg>
+            </button>
+        </div>
+    </header>
+</div>

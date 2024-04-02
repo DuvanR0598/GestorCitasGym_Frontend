@@ -33,7 +33,6 @@ header {
     background: linear-gradient(to right, hsla(211, 34%, 51%, 0.281), hsla(211, 34%, 51%, 0.281)), url(../../../assets/portada.jpg);
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
 }
 
 nav {
@@ -55,7 +54,7 @@ nav > a:hover{
 
 header .textos-header{
     display: flex;
-    height: 430px;
+    height: 600px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -64,22 +63,20 @@ header .textos-header{
 }
 
 .textos-header h1{
-    font-size: 70px;
+    font-size: 100px;
     color: #fff;
-    text-shadow: 0 0 10px #fff;   /* Resplandor del texto */
+    text-shadow: 0 0 10px #f0dd0e;   /* Resplandor del texto */
 }
 
 .textos-header h2{
     font-size: 30px;
     font-weight: 300; /* Lo hace mas ligero o delgado */
     color: #fff;
-    
+    margin-top: 12px;
 }
 
-.wave {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.textos-header img {
+    margin-bottom: 25px;
 }
 
 /* About us */
@@ -136,7 +133,6 @@ header .textos-header{
     width: 24%;
     margin-bottom: 10px;
     overflow: hidden;
-    position: relative;
     cursor: pointer;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
 }

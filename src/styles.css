@@ -54,3 +54,8 @@ body {
 .background-button{
     background: rgb(240, 221, 14);
 }
+
+.debug {
+    border: 1px solid red;
+}
+  

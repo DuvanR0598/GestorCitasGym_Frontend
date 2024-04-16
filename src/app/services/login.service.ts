@@ -4,70 +4,69 @@ import { Subject } from 'rxjs';
 import baserUrl from './helper';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
   public loginStatusSubjec = new Subject<boolean>();
 
-  constructor(private Http:HttpClient) { }
+  constructor(private Http: HttpClient) {}
 
   //generamos el token
-  public generateToken(loginData:any){
+  public generateToken(loginData: any) {
     return this.Http.post(`${baserUrl}/iniciar-sesion`, loginData);
   }
 
   //iniciamos sesion y establecemos el token en el localStorage
-  public loginUser(token:any){
+  public loginUser(token: any) {
     localStorage.setItem('token', token);
   }
 
-  //Metodo para comprabar si estoy conectado o no
-  public isLoggedIn(){
+  //Metodo para comprobar si estoy conectado o no
+  public isLoggedIn() {
     let tokenStr = localStorage.getItem('token');
-    if(tokenStr == undefined || tokenStr == '' || tokenStr == null){
+    if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {
       return false;
-    }else{
+    } else {
       return true;
     }
   }
 
   //cerramos sesion y eliminamos el token y el usuario del localStorage
-  public logOut(){
+  public logOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     return true;
   }
 
   //obtenemos el token
-  public getToken(){
+  public getToken() {
     return localStorage.getItem('token');
   }
 
   //establecemos un usuario
-  public setUser(user:any){
+  public setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
   //obtenemos el usuario
-  public getUser(){
+  public getUser() {
     let userStr = localStorage.getItem('user');
-    if(userStr != null){
+    if (userStr != null) {
       return JSON.parse(userStr);
-    }else{
+    } else {
       this.logOut();
       return null;
     }
   }
 
   //obtener un usuario con su rol.
-  public getUserRol(){
+  public getUserRol() {
     let user = this.getUser();
     return user.authorities[0].authority;
   }
 
   //obtener el usuario actual en el sistema
-  public getUsuarioActual(){
+  public getUsuarioActual() {
     return this.Http.get(`${baserUrl}/usuario-actual`);
   }
 }

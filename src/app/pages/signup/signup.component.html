@@ -1,80 +1,211 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row" style="margin-top : 20px;">
-            <div class="col-md-6 offset-md-3">
-                <div class="container text-center">
-                    <img src="../../../assets/icon.png" width="100" height="100">
-                </div>
-                <h1 class="text-center"> ¿Aún no haces parte de EnerGym?</h1>
-                <h2 class="text-center"> ¡Registrate ahora! </h2>
-                
-                <form (ngSubmit) = "formSubmit()">
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Cedula</mat-label>
-                        <input required [(ngModel)] = "user.cedula" name="cedula" matInput placeholder="Digite su numero de cedula">
-                    </mat-form-field>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Suscribirse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Nombre</mat-label>
-                        <input required [(ngModel)] = "user.nombre" name="nombre" matInput placeholder="Digite su nombre">
-                    </mat-form-field>
+  <body>
+    <div class="form-wrapper">
+      <div class="form-side">
+        <form class="my-form">
+          <div class="login-welcome-row">
+            <h1>Crea tu cuenta</h1>
+          </div>
+          <div class="socials-row">
+            <a href="#" title="Use Google">
+              <img src="../../../assets/logoGoogle.png" alt="Google" />
+              Regístrate con Google
+            </a>
+          </div>
+          <div class="divider">
+            <span class="divider-line"></span>
+            Ó
+            <span class="divider-line"></span>
+          </div>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Apellido</mat-label>
-                        <input required [(ngModel)] = "user.apellido" name="apellido" matInput placeholder="Digite sus apellidos">
-                    </mat-form-field>
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Cedula</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.cedula"
+                    name="cedula"
+                    matInput
+                    placeholder="Digite su numero de cedula"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nombre</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.nombre"
+                    name="nombre"
+                    matInput
+                    placeholder="Digite su nombre"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Apellidos</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.apellido"
+                    name="apellido"
+                    matInput
+                    placeholder="Digite sus apellidos"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label >Genero</mat-label>
-                            <mat-select required [(ngModel)] = "user.genero" name="genero">
-                                <mat-option value="m">Masculino</mat-option>
-                                <mat-option value="f">Femenino</mat-option>
-                            </mat-select>
-                    </mat-form-field>
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Genero</mat-label>
+                  <mat-select required [(ngModel)]="user.genero" name="genero">
+                    <mat-option value="m">Masculino</mat-option>
+                    <mat-option value="f">Femenino</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Fecha de nacimiento</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.fechaNacimiento"
+                    type="date"
+                    name="fechaNacimiento"
+                    matInput
+                    placeholder="Digite su fecha de nacimiento"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Celular</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.celular"
+                    name="celular"
+                    matInput
+                    placeholder="Digite su numero celular"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Fecha de nacimiento</mat-label>
-                        <input required [(ngModel)] = "user.fechaNacimiento" type="date" name="fechaNacimiento" matInput placeholder="Digite su fecha de nacimiento">
-                    </mat-form-field>
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.email"
+                    name="email"
+                    type="Email"
+                    matInput
+                    placeholder="Digite su correo electronico"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Peso</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.peso"
+                    name="peso"
+                    matInput
+                    placeholder="Digite su peso"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Altura</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.altura"
+                    name="altura"
+                    matInput
+                    placeholder="Digite su altura"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Celular</mat-label>
-                        <input required [(ngModel)] = "user.celular" name="celular" matInput placeholder="Digite su numero celular">
-                    </mat-form-field>
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.username"
+                    name="username"
+                    matInput
+                    autocomplete="off"
+                    placeholder="Digite su username"
+                  />
+                  <mat-hint>El nombre de usuario debe ser único</mat-hint>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Password</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.password"
+                    name="password"
+                    type="password"
+                    title="Mínimo 6 caracteres al menos 1 mayuscula y 1 Número"
+                    matInput
+                    placeholder="Digite su contraseña"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input required [(ngModel)] = "user.email" name="email" type="email" matInput placeholder="Digite su correo electronico">
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Peso</mat-label>
-                        <input required [(ngModel)] = "user.peso" name="peso" matInput placeholder="Digite su peso">
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Altura</mat-label>
-                        <input required [(ngModel)] = "user.altura" name="altura" matInput placeholder="Digite su altura">
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input required [(ngModel)] = "user.username" name="username" matInput placeholder="Digite su username">
-                        <mat-hint>El nombre de usuario debe ser único</mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input required [(ngModel)] = "user.password" name="nombre" type="password" matInput placeholder="Digite su contraseña">
-                    </mat-form-field>
-
-                    <div class="container text-center">
-                        <button class="background-button" mat-raised-button> Registrar </button>
-                        <button type="reset" style="margin-left: 20px;" mat-raised-button color="primary"> Limpiar campos </button>
-                    </div>
-                </form>
-                <br><br><br>
+          <button class="my-form__button" type="submit">Registrarse</button>
+          <div class="my-form__actions">
+            <div class="my-form__row">
+              <span>¿Olvidaste tu contraseña?</span>
+              <a href="#" title="Reset Password"> Restablecer la contraseña </a>
             </div>
+            <div class="my-form__signup">
+              <a href="/login" title="Login"> Iniciar sesión </a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="info-side">
+        <img src="../../../assets/mock1.png" alt="Mock" class="mockup" />
+        <div class="welcome-message">
+          <h2>Vive la Experiencia</h2>
+          <p>tecnología de punta y las mejores instalaciones</p>
         </div>
+      </div>
     </div>
-</div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -4,24 +4,20 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent implements OnInit {
-  
+  constructor(private usuarioService: UsuariosService) {}
 
-  constructor(private usuarioService:UsuariosService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  getUsuariosPDF(){
+  getUsuariosPDF() {
     this.usuarioService.generateListUsuariosPDF().subscribe((data) => {
-      let dowloadURL = window.URL.createObjectURL(data)
-      let link = document.createElement('a')
-      link.href = dowloadURL
-      link.download = "Usuarios_Energym.pdf"
-      link.click()
-    })
+      let dowloadURL = window.URL.createObjectURL(data);
+      let link = document.createElement('a');
+      link.href = dowloadURL;
+      link.download = 'Usuarios_Energym.pdf';
+      link.click();
+    });
   }
-
 }

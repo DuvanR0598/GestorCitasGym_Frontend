@@ -3,53 +3,36 @@
         <div class="menu__wrapper">
             <div class="menu__bar">
                 <a href="#" title="Home" aria-label="home" class="logo">
-                    <img src="../../../assets/logoEnergym_vert.png" alt="logo">
+                    <img src="../../../assets/logoEnergym_vert.png" alt="logo" />
                 </a>
                 <nav>
                     <ul class="navigation hide">
                         <li>
-                            <a href="#devs" title="Developers">
-                                Sedes
-                            </a>
+                            <a href="#" title="sedes"> Sedes </a>
                         </li>
                         <li>
-                            <a href="#pricing" title="Pricing">
-                                Servicios
-                            </a>
+                            <a href="#" title="servicios"> Servicios </a>
                         </li>
                         <li>
-                            <a href="#docs" title="Docs">
-                                Planes
-                            </a>
+                            <a href="#" title="planes"> Planes </a>
                         </li>
                         <li>
-                            <a href="#blog" title="Blog">
-                                Clases
-                            </a>
+                            <a href="#" title="clases"> Clases </a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="action-buttons hide">
-                <a *ngIf = "!isLoggedIn"
-                    [routerLink] = "'/signup'" title="Log in" class="secondary">
+                <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" title="Log in" class="secondary">
                     Suscribirse
                 </a>
-                <a *ngIf = "!isLoggedIn"
-                    [routerLink] = "'/login'" title="Sign up" class="primary">
-                    Iniciar Sesión
+                <a *ngIf="!isLoggedIn" [routerLink]="'/login'" title="Sign up" class="primary">
+                    Iniciar sesión
+                </a>
+                <a *ngIf="isLoggedIn" (click)= "cerrarSesion()" class="primary">
+                    Cerrar sesión
                 </a>
             </div>
-            <button aria-label="Open menu" class="burger-menu" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24"
-                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 6l16 0" />
-                    <path d="M4 12l16 0" />
-                    <path d="M4 18l16 0" />
-                </svg>
-            </button>
         </div>
     </header>
 </div>

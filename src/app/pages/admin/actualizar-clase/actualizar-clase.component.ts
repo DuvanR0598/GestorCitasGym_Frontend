@@ -1,40 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/categoria.service';
-import { CitasService } from 'src/app/services/citas.service';
+import { ClasesService } from 'src/app/services/clases.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-cita',
-  templateUrl: './actualizar-cita.component.html',
-  styleUrls: ['./actualizar-cita.component.css']
+  templateUrl: './actualizar-clase.component.html',
+  styleUrls: ['./actualizar-clase.component.css']
 })
-export class ActualizarCitaComponent implements OnInit {
+export class ActualizarClaseComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
-    private citaService:CitasService,
+    private clasesService:ClasesService,
     private categoriaService:CategoriaService,
     private loginService:LoginService,
     private router:Router) { }
 
-  idCita = 0;
-  cita:any;
+  idClases = 0;
+  clase:any;
   categorias:any;
   user:any = null;
 
   ngOnInit(): void {
-    this.idCita = this.route.snapshot.params['idCita'];
-    this.citaService.obtenerCita(this.idCita).subscribe(
+    this.idClases = this.route.snapshot.params['idClases'];
+    this.clasesService.obtenerClase(this.idClases).subscribe(
       (data) => {
-        this.cita = data;
-        console.log(this.cita);
+        this.clase = data;
+        console.log(this.clase);
       },
       (error) => {
         console.log(error);
       }
     )
-    this.user = this.loginService.getUser(); //obtenemos el usuario actual logeado en el sistema
+    //this.user = this.loginService.getUser(); //obtenemos el usuario actual logeado en el sistema
 
     this.categoriaService.listarCategorias().subscribe(
       (data:any) => {
@@ -47,18 +47,18 @@ export class ActualizarCitaComponent implements OnInit {
   }
 
   public actualizarDatos(){
-    this.citaService.actualizarCita(this.cita).subscribe(
+    this.clasesService.actualizarClase(this.clase).subscribe(
       (data) => {
-        Swal.fire('Cita actualizada','La cita ha sido actualizada con éxito','success').then(
+        Swal.fire('Clase actualizada','La clase ha sido actualizada con éxito','success').then(
           (e) => {
-            this.router.navigate(['/admin/citas-grupales']);
+            this.router.navigate(['/admin/clases']);
           }
         );
       },
       (error) => {
-        Swal.fire('Error en el sistema','No se ha podido actualizar la cita','error');
+        Swal.fire('Error en el sistema','No se ha podido actualizar la clase','error');
         console.log(error);
       }
     )
-  }
+   }
 }

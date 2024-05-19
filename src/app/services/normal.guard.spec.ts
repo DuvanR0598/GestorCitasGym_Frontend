@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NormalGuard } from './normal.guard';
+import { NormalGuard } from './user.guard';
 
 describe('NormalGuard', () => {
   let guard: NormalGuard;

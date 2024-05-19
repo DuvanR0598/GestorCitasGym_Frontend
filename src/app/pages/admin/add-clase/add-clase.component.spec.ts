@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerCitasComponent } from './ver-citas.component';
+import { AddClasesComponent } from './add-clase.component';
 
-describe('VerCitasComponent', () => {
-  let component: VerCitasComponent;
-  let fixture: ComponentFixture<VerCitasComponent>;
+describe('AddCitasComponent', () => {
+  let component: AddClasesComponent;
+  let fixture: ComponentFixture<AddClasesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VerCitasComponent ]
+      declarations: [ AddClasesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VerCitasComponent);
+    fixture = TestBed.createComponent(AddClasesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

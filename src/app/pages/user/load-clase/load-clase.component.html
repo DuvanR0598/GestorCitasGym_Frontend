@@ -1,0 +1,28 @@
+<div class="bootstrap-wrapper body">
+  <div class="container-fluid">
+    <h1 class="text-center">Clases disponibles</h1>
+    <div class="row mt20" *ngIf = "clases">
+      <div class="col-md-4" *ngFor = "let e of clases">
+        <mat-card class="mb20">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+              {{ e.nombreClase }}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{ e.categoria.titulo }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <!--<p>{{ e.tipoClase }}</p>  Añadir una descripcion de la clase una vez corregido en back -->
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary">Ver</button>
+            <button mat-button class="background-button">Incribirme</button>
+            <button mat-button color="accent">Modalidad : {{ e.tipoClase }}</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActualizarCitaComponent } from './actualizar-cita.component';
+import { VerClasesComponent } from './ver-clases.component';
 
-describe('ActualizarCitaComponent', () => {
-  let component: ActualizarCitaComponent;
-  let fixture: ComponentFixture<ActualizarCitaComponent>;
+describe('VerCitasComponent', () => {
+  let component: VerClasesComponent;
+  let fixture: ComponentFixture<VerClasesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActualizarCitaComponent ]
+      declarations: [ VerClasesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ActualizarCitaComponent);
+    fixture = TestBed.createComponent(VerClasesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

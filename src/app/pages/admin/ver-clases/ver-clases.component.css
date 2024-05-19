@@ -1,0 +1,8 @@
+.example-header-image {
+  background-image: url(../../../../assets/reserva.png);
+  background-size: cover;
+}
+
+.body {
+  margin-top: 80px;
+}

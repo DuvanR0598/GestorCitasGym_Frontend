@@ -1,0 +1,30 @@
+<div class="body">
+  <br />
+  <h1 class="text-center">Listado de clases</h1>
+  <mat-card class="mt10" *ngFor="let c of clases">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> {{ c.nombreClase }} </mat-card-title>
+      <mat-card-subtitle> {{ c.categoria.titulo }} </mat-card-subtitle>
+      <mat-card-subtitle>Fecha: {{ c.fechaClase }} </mat-card-subtitle>
+      <mat-card-subtitle>Hora: {{ c.hora }} </mat-card-subtitle>
+      <mat-card-subtitle>Por: {{ c.instructor }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-actions>
+        <button [routerLink] = "'/admin/clase/'+c.idClases" mat-flat-button class="ml20 background-button">
+          Actualizar
+        </button>
+        <button mat-flat-button color="warn" class="ml10" (click) = "eliminarClase(c.idClase)">
+          Eliminar 
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="container text-center mt20">
+    <button class="background-button" routerLink="/admin/crear-clase" mat-raised-button>
+      Agregar clase
+    </button>
+  </div>
+</div>

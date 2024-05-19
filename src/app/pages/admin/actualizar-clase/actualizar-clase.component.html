@@ -1,0 +1,71 @@
+<mat-card class="body">
+    <h1 class="text-center">Actualizar clase</h1>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form *ngIf = "clase" (ngSubmit) = "actualizarDatos()">
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>ID clase</mat-label>
+            <input [(ngModel)] = "clase.idClases" type="number" name="IdClase" required disabled="true"
+              placeholder="" matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input [(ngModel)] = "clase.nombreClase" type="text" name="nombreClase"
+              placeholder="Digite el nombre de la clase" required matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <mat-select required [(ngModel)] = "clase.tipoClase" name="tipoClase">
+              <mat-option value="Individual">Individual</mat-option>
+              <mat-option value="Grupal">Grupal</mat-option>
+              <mat-option value="Personalizada">Personalizada</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Instructor</mat-label>
+            <input [(ngModel)] = "clase.instructor" type="text" name="instructor"
+              placeholder="Digite el nombre del instructor" required matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Ubicación</mat-label>
+            <input [(ngModel)] = "clase.ubicacion" type="text" name="ubicacion"
+              placeholder="Digite la ubicación de la clase" required matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input [(ngModel)] = "clase.fechaClase" type="date" name="fecha" required matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Hora</mat-label>
+            <input [(ngModel)] = "clase.hora" value="00:00:00" type="time" step="1" name="hora" required
+              matInput />
+          </mat-form-field>
+  
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Capacidad Maxima</mat-label>
+            <input [(ngModel)] = "clase.capacidadMax" type="number" name="capacidadMax" required
+              placeholder="Digita la cantidad de usuarios maximo para la clase" matInput />
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="mt20 w100">
+            <mat-label>Categorías</mat-label>
+            <mat-select name="categoria" [(ngModel)] = "clase.categoria.idCategoria">
+              <mat-option *ngFor="let c of categorias" [value]="c.idCategoria">
+                {{ c.titulo }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <div class="container text-center">
+            <button class="background-button" mat-raised-button>Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card>

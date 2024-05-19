@@ -13,7 +13,6 @@ export class AddCategoriasComponent implements OnInit {
 
   categoria = {
     titulo: '',
-    numPersonas: '',
     descripcion: ''
   }
 

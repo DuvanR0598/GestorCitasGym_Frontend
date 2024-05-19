@@ -10,10 +10,10 @@ export class CategoriaService {
   constructor(private http:HttpClient) { }
 
   public listarCategorias(){
-    return this.http.get(`${baserUrl}/categorias/lista-categorias`);
+    return this.http.get(`${baserUrl}/categoria/lista-categorias`);
   }
 
   public agregarCategoria(categoria:any){
-    return this.http.post(`${baserUrl}/categorias/guardar-categoria`, categoria)
+    return this.http.post(`${baserUrl}/categoria/guardar-categoria`, categoria)
   }
 }

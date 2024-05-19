@@ -28,12 +28,12 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { VerCategoriasComponent } from './pages/admin/ver-categorias/ver-categorias.component';
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
-import { VerCitasComponent } from './pages/admin/ver-citas/ver-citas.component';
-import { AddCitasComponent } from './pages/admin/add-citas/add-citas.component';
+import { VerClasesComponent } from './pages/admin/ver-clases/ver-clases.component';
+import { AddClasesComponent } from './pages/admin/add-clase/add-clase.component';
 import {MatSelectModule} from '@angular/material/select';
-import { ActualizarCitaComponent } from './pages/admin/actualizar-cita/actualizar-cita.component';
+import { ActualizarClaseComponent } from './pages/admin/actualizar-clase/actualizar-clase.component';
 import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
-import { LoadCitaComponent } from './pages/user/load-cita/load-cita.component';
+import { LoadCitaComponent } from './pages/user/load-clase/load-clase.component';
 import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
@@ -50,9 +50,9 @@ import {MatMenuModule} from '@angular/material/menu';
     WelcomeComponent,
     VerCategoriasComponent,
     AddCategoriasComponent,
-    VerCitasComponent,
-    AddCitasComponent,
-    ActualizarCitaComponent,
+    VerClasesComponent,
+    AddClasesComponent,
+    ActualizarClaseComponent,
     UserSidebar,
     LoadCitaComponent
   ],
@@ -77,3 +77,4 @@ import {MatMenuModule} from '@angular/material/menu';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

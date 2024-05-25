@@ -26,6 +26,18 @@ export class ClasesService {
   }
 
   public actualizarClase(clase:any){
-    return this.http.put(`${baserUrl}/clases/actualizar-clase`, clase)
+    return this.http.put(`${baserUrl}/clases/actualizar-clase`, clase);
+  }
+
+  public listarClasesDeUnaCategoria(idCategoria:any){
+    return this.http.get(`${baserUrl}/clases/clasesbycategoria/${idCategoria}`);
+  }
+
+  public listarClasesActivas(){
+    return this.http.get(`${baserUrl}/clases/clases-activas`);
+  }
+
+  public listarClasesActivasDeUnaCategoria(idCategoria:any){
+    return this.http.get(`${baserUrl}/clases/clasesactivasbycategoria/${idCategoria}`);
   }
 }

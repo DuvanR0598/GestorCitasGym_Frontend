@@ -25,6 +25,7 @@ export class AddClasesComponent implements OnInit {
     fechaClase: '',
     hora: '',
     capacidadMax: '',
+    activo:true,
     categoria: {
       idCategoria: ''
     }
@@ -73,6 +74,7 @@ export class AddClasesComponent implements OnInit {
           fechaClase: '',
           hora: '',
           capacidadMax: '',
+          activo:true,
           categoria: {
             idCategoria: ''
           }

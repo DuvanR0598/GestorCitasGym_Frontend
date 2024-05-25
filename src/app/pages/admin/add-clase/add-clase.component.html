@@ -13,6 +13,10 @@
           </mat-select>
         </mat-form-field> -->
 
+        <mat-slide-toggle class="mt20" name = "activo" [(ngModel)] = "claseData.activo" color="primary">
+          Estado de publicación
+        </mat-slide-toggle>
+
         <mat-form-field class="w100" appearance="fill">
           <mat-label>ID clase</mat-label>
           <input [(ngModel)] = "claseData.idClase" type="number" name="IdClase" required

@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { AuthInterceptorProviders } from './services/auth.interceptor';
@@ -69,6 +70,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatSlideToggleModule,
     MatListModule,
     MatSelectModule,
     MatMenuModule

@@ -16,22 +16,34 @@ export class LoadCitaComponent implements OnInit {
     private claseService:ClasesService) { }
 
   ngOnInit(): void {
-    this.idCat = this.route.snapshot.params['idCat'];
-    if(this.idCat == 0){
-      console.log("Cargando todas las clases")
-      this.claseService.listarClases().subscribe(
-        (data) => {
-          this.clases = data;
-          console.log(this.clases);
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
-    }else{
-      console.log("Cargando una clase en específico");
-      this.clases = [];
-    }
-  }
+    this.route.params.subscribe((params) => {
+      this.idCat = params['idCat'];
 
+      if(this.idCat == 0){
+        console.log("Cargando todas las clases")
+        //this.claseService.listarClases().subscribe(
+          this.claseService.listarClasesActivas().subscribe(
+          (data) => {
+            this.clases = data;
+            console.log(this.clases);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }else{
+        console.log("Cargando una clase en específico");
+        //this.claseService.listarClasesDeUnaCategoria(this.idCat).subscribe(
+          this.claseService.listarClasesActivasDeUnaCategoria(this.idCat).subscribe(
+          (data:any) => {
+            this.clases = data;
+            console.log(this.clases);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      }
+    })
+  }
 }

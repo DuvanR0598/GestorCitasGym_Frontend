@@ -2,6 +2,11 @@
     <h1 class="text-center">Actualizar clase</h1>
     <div class="row">
       <div class="col-md-8 offset-md-2">
+
+        <mat-slide-toggle class="mt20" name = "activo" [(ngModel)] = "clase.activo" color="primary">
+          Estado de publicación
+        </mat-slide-toggle>
+
         <form *ngIf = "clase" (ngSubmit) = "actualizarDatos()">
           <mat-form-field class="w100" appearance="fill">
             <mat-label>ID clase</mat-label>

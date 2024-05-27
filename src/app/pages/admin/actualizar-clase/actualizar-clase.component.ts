@@ -16,7 +16,7 @@ export class ActualizarClaseComponent implements OnInit {
     private clasesService:ClasesService,
     private categoriaService:CategoriaService,
     private loginService:LoginService,
-    private router:Router) { }
+    private router:Router) { } 
 
   idClases = 0;
   clase:any;
@@ -48,7 +48,7 @@ export class ActualizarClaseComponent implements OnInit {
 
   public actualizarDatos(){
     this.clasesService.actualizarClase(this.clase).subscribe(
-      (data) => {
+      (data: string) => {
         Swal.fire('Clase actualizada','La clase ha sido actualizada con éxito','success').then(
           (e) => {
             this.router.navigate(['/admin/clases']);

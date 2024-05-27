@@ -21,14 +21,28 @@ export class SignupComponent implements OnInit {
     peso : '',
     altura : '',
     username : '',
-    password : ''
-  }
+    password : '',
+    listaRoles: [
+      {
+        dniRol: 1, //DATO QUEMADO
+        nombre: 'ROLE_USER' //DATO QUEMADO
+      }
+    ],
+    listaMembresias: [
+      {
+        idMembresia: '1',
+        titulo: 'Premium',
+        fechaInicio: '2024-05-28',
+        fechaVencimiento: '2024-12-31',
+        estado: 'Activo'
+      }
+    ]
+  };
 
   constructor(private UserService:UserService,
     private snack:MatSnackBar) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   formSubmit(){
     console.log(this.user);
@@ -44,6 +58,34 @@ export class SignupComponent implements OnInit {
   this.UserService.registrarUsuario(this.user).subscribe( data => {
       console.log(data);
       Swal.fire('Usuario guardado', 'Usuario registrado con exito en el sistema', 'success');
+      this.user = {
+        cedula : '',
+        nombre : '',
+        apellido : '',
+        genero : '',
+        fechaNacimiento : '',
+        celular : '',
+        email : '',
+        peso : '',
+        altura : '',
+        username : '',
+        password : '',
+        listaRoles: [
+          {
+            dniRol: 0, 
+            nombre: '' 
+          }
+        ],
+        listaMembresias: [
+          {
+            idMembresia: '',
+            titulo: '',
+            fechaInicio: '',
+            fechaVencimiento: '',
+            estado: ''
+          }
+        ]
+      };
     },error => {
       console.log(error);
       this.snack.open('Ha ocurrido un error en el sistema','',{

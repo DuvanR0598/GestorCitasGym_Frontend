@@ -15,11 +15,11 @@
   <body>
     <div class="form-wrapper">
       <div class="form-side">
-        <form class="my-form">
+        <form (ngSubmit) = "formSubmit()" class="my-form">
           <div class="login-welcome-row">
             <h1>Crea tu cuenta</h1>
           </div>
-          <!--<div class="socials-row">
+          <div class="socials-row">
             <a href="#" title="Use Google">
               <img src="../../../assets/logoGoogle.png" alt="Google" />
               Regístrate con Google
@@ -29,7 +29,7 @@
             <span class="divider-line"></span>
             Ó
             <span class="divider-line"></span>
-          </div> -->
+          </div> 
 
           <table class="example-full-width" cellspacing="0">
             <tr>

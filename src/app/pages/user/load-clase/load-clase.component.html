@@ -18,7 +18,7 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-button color="primary">Ver</button>
-            <button mat-button class="background-button">Incribirme</button>
+            <button mat-button class="background-button" (click)= "inscribirme(e.idClases)" >Incribirme</button>
             <button mat-button color="accent">Modalidad : {{ e.tipoClase }}</button>
           </mat-card-actions>
         </mat-card>

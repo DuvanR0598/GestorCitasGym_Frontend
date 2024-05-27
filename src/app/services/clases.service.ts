@@ -26,7 +26,7 @@ export class ClasesService {
   }
 
   public actualizarClase(clase:any){
-    return this.http.put(`${baserUrl}/clases/actualizar-clase`, clase);
+    return this.http.put(`${baserUrl}/clases/actualizar-clase`, clase, { responseType: 'text' });
   }
 
   public listarClasesDeUnaCategoria(idCategoria:any){
@@ -39,5 +39,9 @@ export class ClasesService {
 
   public listarClasesActivasDeUnaCategoria(idCategoria:any){
     return this.http.get(`${baserUrl}/clases/clasesactivasbycategoria/${idCategoria}`);
+  }
+
+  public inscribirUsuarioClase(idClase: number, cedulaUsuario: number) {
+    return this.http.post(`${baserUrl}/clases/inscribir`, { idClase, cedulaUsuario }, { responseType: 'text' });
   }
 }

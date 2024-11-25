@@ -15,6 +15,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { VerClasesComponent } from './pages/admin/ver-clases/ver-clases.component';
 import { AddClasesComponent } from './pages/admin/add-clase/add-clase.component';
+import { WelcomeUserComponent } from './pages/user/welcome-user/welcome-user.component';
+import { LoadInscripcionesComponent } from './pages/user/load-inscripciones/load-inscripciones.component';
+
 
 const routes: Routes = [
   /**
@@ -83,6 +86,14 @@ const routes: Routes = [
         path: ':idCat',
         component: LoadClaseComponent,
       },
+      {
+        path: '',
+        component: WelcomeUserComponent,
+      },
+      {
+        path: 'mis-inscripciones/:usuarioId',
+        component: LoadInscripcionesComponent,
+      }
     ],
   },
 ];

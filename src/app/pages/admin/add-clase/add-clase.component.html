@@ -60,7 +60,7 @@
 
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Fecha</mat-label>
-          <input [(ngModel)] = "claseData.fechaClase" type="date" name="fecha" required matInput />
+          <input [(ngModel)] = "claseData.fechaClase" type="date" name="fecha" required matInput [min] = "minDate"/>
         </mat-form-field>
 
         <mat-form-field class="w100" appearance="fill">

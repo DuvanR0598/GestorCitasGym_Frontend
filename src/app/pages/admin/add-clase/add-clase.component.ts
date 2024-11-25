@@ -15,6 +15,7 @@ export class AddClasesComponent implements OnInit {
 
   categorias:any = [];
   user:any = null;
+  minDate!: string;
 
   claseData = {
     idClase: '',
@@ -38,6 +39,9 @@ export class AddClasesComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+    const today = new Date();
+    this.minDate = this.formatDate(today); // Establece la fecha mínima como la fecha actual
+
     this.categoriaService.listarCategorias().subscribe(
       (dato) => {
         this.categorias = dato;
@@ -49,6 +53,13 @@ export class AddClasesComponent implements OnInit {
       }
     )
     this.user = this.loginService.getUser(); //obtenemos el usuario actual logeado en el sistema
+  }
+
+  formatDate(date: Date): string {
+    const day = ('0' + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`; // Devolvemos la fecha en el formato yyyy-MM-dd
   }
 
   guardarClase(){

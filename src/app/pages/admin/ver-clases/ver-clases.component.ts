@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2';
 import { ClasesService } from '../../../services/clases.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-clases',
@@ -11,7 +12,9 @@ export class VerClasesComponent implements OnInit {
 
   clases:any = []
 
-  constructor(private clasesService:ClasesService) { }
+  constructor(private clasesService:ClasesService,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.clasesService.listarClases().subscribe(
@@ -39,8 +42,8 @@ export class VerClasesComponent implements OnInit {
     }).then((result) => {
       if(result.isConfirmed){
         this.clasesService.eliminarClase(idClase).subscribe(
-          (data) => {
-            this.clases = this.clases.filter((clase:any) => clase.idclase != idClase);
+          (data: string) => {
+            this.clases = this.clases.filter((clase:any) => clase.idClases !== idClase);
             Swal.fire('Clase eliminada','La clase ha sido eliminada con éxito','success');
           },
           (error) => {

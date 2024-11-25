@@ -29,9 +29,18 @@
                 <a *ngIf="!isLoggedIn" [routerLink]="'/login'" title="Sign up" class="primary">
                     Iniciar sesión
                 </a>
-                <a *ngIf="isLoggedIn" (click)= "cerrarSesion()" class="primary">
+                <a *ngIf = "isLoggedIn" (click)="cerrarSesion()" class="primary">
                     Cerrar sesión
                 </a>
+                <button
+                    *ngIf = "isLoggedIn && user"
+                    mat-button
+                    style="margin-right: 10px"
+                    class="nom-user"
+                    aria-label="Example icon-button with heart icon"
+                    [routerLink] = "'/admin'">   
+                    {{ user.nombre }}
+                </button>
             </div>
         </div>
     </header>

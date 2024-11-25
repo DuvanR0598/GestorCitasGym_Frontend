@@ -77,8 +77,8 @@ export class LoadCitaComponent implements OnInit {
       },
       (error) => {
         console.error('Error en la inscripción', error);
-        this.snackBar.open('Error en la inscripción', 'Cerrar', {
-          duration: 3000,
+        this.snackBar.open('Lo siento, renueva tu membresia para inscribirte a una clase', 'Cerrar', {
+          duration: 5000,
         });
       }
     );

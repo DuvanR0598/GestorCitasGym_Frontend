@@ -1,6 +1,6 @@
 <div class="bootstrap-wrapper body">
   <div class="container-fluid">
-    <h1 class="text-center">Clases disponibles</h1>
+    <h1 class="text-center">Mis Inscripciones</h1>
     <div class="row mt20" *ngIf = "clases">
       <div class="col-md-4" *ngFor = "let e of clases">
         <mat-card class="mb20">
@@ -12,20 +12,18 @@
             <mat-card-subtitle>Por: {{ e.instructor }}</mat-card-subtitle>
             <mat-card-subtitle>ubicacion: {{ e.ubicacion }}</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>
-            <!--<p>{{ e.tipoClase }}</p>  Añadir una descripcion de la clase una vez corregido en back -->
-          </mat-card-content>
+
           <mat-card-actions>
-            <!--<button mat-button color="primary">Ver</button>-->
-            <button mat-button class="background-button" (click)= "inscribirme(e.idClases)" >Inscribirme</button>
-            <button mat-button color="accent">Modalidad : {{ e.tipoClase }}</button>
+            <button mat-button class="background-button" (click)= "cancelarInscrip(8)" >Cancelar</button>
           </mat-card-actions>
+
+
         </mat-card>
       </div>
       <div class="col-md-12" *ngIf = "clases.length == 0">
         <mat-card>
           <mat-card-content>
-            <h1>No hay clases en esta categoría</h1>
+            <h1>No te has incrito a ninguna clase.</h1>
           </mat-card-content>
         </mat-card>
       </div>

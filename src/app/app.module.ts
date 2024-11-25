@@ -36,6 +36,10 @@ import { ActualizarClaseComponent } from './pages/admin/actualizar-clase/actuali
 import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
 import { LoadCitaComponent } from './pages/user/load-clase/load-clase.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { WelcomeUserComponent } from './pages/user/welcome-user/welcome-user.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { LoadInscripcionesComponent } from './pages/user/load-inscripciones/load-inscripciones.component';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +59,9 @@ import {MatMenuModule} from '@angular/material/menu';
     AddClasesComponent,
     ActualizarClaseComponent,
     UserSidebar,
-    LoadCitaComponent
+    LoadCitaComponent,
+    WelcomeUserComponent,
+    LoadInscripcionesComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +79,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSlideToggleModule,
     MatListModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

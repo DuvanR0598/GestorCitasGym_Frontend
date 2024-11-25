@@ -19,12 +19,12 @@
           <div class="login-welcome-row">
             <h1>Crea tu cuenta</h1>
           </div>
-          <div class="socials-row">
+          <!--<div class="socials-row">
             <a href="#" title="Use Google">
               <img src="../../../assets/logoGoogle.png" alt="Google" />
               Regístrate con Google
-            </a>
-          </div> 
+            </a> 
+          </div> -->
           <div class="divider">
             <span class="divider-line"></span>
             Ó
@@ -35,7 +35,7 @@
             <tr>
               <td>
                 <mat-form-field class="example-full-width">
-                  <mat-label>Cedula</mat-label>
+                  <mat-label>Cédula</mat-label>
                   <input
                     required
                     [(ngModel)]="user.cedula"
@@ -92,11 +92,11 @@
                   <mat-label>Fecha de nacimiento</mat-label>
                   <input
                     required
-                    [(ngModel)]="user.fechaNacimiento"
-                    type="date"
-                    name="fechaNacimiento"
+                    [(ngModel)] = "user.fechaNacimiento"
+                    [max] = "fechaActual"
+                    type = "date"
+                    name = "fechaNacimiento"
                     matInput
-                    placeholder="Digite su fecha de nacimiento"
                   />
                 </mat-form-field>
               </td>
@@ -123,7 +123,7 @@
                     name="email"
                     type="Email"
                     matInput
-                    placeholder="Digite su correo electronico"
+                    placeholder="example@micorreo.com"
                   />
                 </mat-form-field>
               </td>
@@ -177,16 +177,17 @@
                 </mat-form-field>
               </td>
               <td>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="example-full-width" >
                   <mat-label>Password</mat-label>
                   <input
                     required
-                    [(ngModel)]="user.password"
+                    [(ngModel)] = "user.password"
                     name="password"
                     type="password"
-                    title="Mínimo 6 caracteres al menos 1 mayuscula y 1 Número"
                     matInput
                     placeholder="Digite su contraseña"
+                    matTooltip="Mínimo 8 caracteres, 1 letra mayúscula, 1 letra minúscula, 1 número y 1 carácter especial 
+                    (como !, @, #, etc.), no tenga espacios en blanco."
                   />
                 </mat-form-field>
               </td>

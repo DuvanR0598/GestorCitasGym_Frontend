@@ -18,7 +18,7 @@ export class ClasesService {
   }
 
   public eliminarClase(idClase:any){
-    return this.http.delete(`${baserUrl}/clases/eliminar-clase/${idClase}`);
+    return this.http.delete(`${baserUrl}/clases/eliminar-clase/${idClase}`, { responseType: 'text' });
   }
 
   public obtenerClase(idClases:any){
@@ -42,6 +42,15 @@ export class ClasesService {
   }
 
   public inscribirUsuarioClase(idClase: number, cedulaUsuario: number) {
-    return this.http.post(`${baserUrl}/clases/inscribir`, { idClase, cedulaUsuario }, { responseType: 'text' });
+    return this.http.post(`${baserUrl}/reserva/inscribir`, { idClase, cedulaUsuario }, { responseType: 'text' });
+  }
+
+  // Método para listar las clases del usuario inscrito
+  public listarClasesPorUsuario(usuarioId: any) {
+    return this.http.get(`${baserUrl}/reserva/mis-clases/${usuarioId}`); 
+  }
+
+  public cancelarInscripcion(idReserva: number) {
+    return this.http.post(`${baserUrl}/reserva/cancelar/`, { idReserva }, { responseType: 'text' }); 
   }
 }

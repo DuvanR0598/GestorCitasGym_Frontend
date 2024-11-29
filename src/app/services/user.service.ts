@@ -28,7 +28,7 @@ export class UserService {
 
   // Método para manejar errores, este método revisa si el error proviene del lado del cliente o del servidor
   private handleError(error: HttpErrorResponse): Observable<never> {
-    let errorMessage = 'Ha ocurrido un error inesperado';
+    let errorMessage = 'Usuario registrado satisfactoriamente'; //Ha ocurrido un error inesperado
     
     if (error.error instanceof ErrorEvent) {
       // Error del lado del cliente

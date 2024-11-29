@@ -56,8 +56,10 @@ export class ActualizarClaseComponent implements OnInit {
         );
       },
       (error) => {
-        Swal.fire('Error en el sistema','No se ha podido actualizar la clase','error');
+        const errorMessage = error.error || 'No se ha podido actualizar la clase';
+        Swal.fire('Error en la validación',errorMessage,'error');
         console.log(error);
+        console.log(error.error);
       }
     )
    }

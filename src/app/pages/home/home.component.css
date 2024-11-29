@@ -27,7 +27,7 @@ body{
 
 header {
     width: 100%;
-    height: 600px;
+    height: 100%;
     background: #68829E;
     background: -webkit-linear-gradient(to right, hsla(211, 100%, 50%, 0.281), hsla(211, 34%, 51%, 0.281)), url(../../../assets/portada.jpg);
     background: linear-gradient(to right, hsla(211, 34%, 51%, 0.281), hsla(211, 34%, 51%, 0.281)), url(../../../assets/portada.jpg);

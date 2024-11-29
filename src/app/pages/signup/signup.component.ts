@@ -30,9 +30,9 @@ export class SignupComponent implements OnInit {
     ],
     listaMembresias: [
       {
-        idMembresia: '2',
-        titulo: 'Basico',
-        fechaInicio: '2024-06-04',
+        idMembresia: '1',
+        titulo: 'Premium',
+        fechaInicio: '2024-06-01',
         fechaVencimiento: '2024-12-31',
         estado: 'Activo'
       }
@@ -70,17 +70,44 @@ export class SignupComponent implements OnInit {
     }, 
     (error) => {
       console.error('Error recibido:', error); // Para depuración, revisamos el error completo
-
-      // Intentar capturar el mensaje del backend si es un array
-      if (Array.isArray(error.error) && error.error.length > 0) {
-        const errorMessage = error.error[0].defaultMessage || 'Error desconocido'; 
-        this.snack.open(errorMessage, 'Aceptar', {
+      
+      if (Array.isArray(error)) {
+        // Caso 1: El error es un array de objetos con mensajes
+        // Mapear todos los mensajes de error y unirlos en una cadena
+        const errorMessages = error
+          .map((err: any) => err.defaultMessage || 'Error desconocido')
+          .join(' ');
+        this.snack.open(errorMessages, 'Aceptar', {
           duration: 5000,
           verticalPosition: 'top',
           horizontalPosition: 'right'
         });
-      } else {
-        // En caso de que el error no sea un array o no tenga el formato esperado
+      } else if (error.error && Array.isArray(error.error)) {
+        // Mapear todos los mensajes de error dentro de error.error
+        const errorMessages = error.error
+          .map((err: any) => err.defaultMessage || 'Error desconocido')
+          .join(' ');
+        this.snack.open(errorMessages, 'Aceptar', {
+          duration: 5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right'
+        });
+      } else if (error.error?.defaultMessage) {
+        // Si el error tiene un solo mensaje
+        this.snack.open(error.error.defaultMessage, 'Aceptar', {
+          duration: 5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right'
+        });
+      }else if (typeof error === 'string') {
+        // Caso 3: Angular mapea el mensaje a error.message
+        this.snack.open(error, 'Aceptar', {
+          duration: 5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right'
+        });
+      }else {
+        // Error genéricoo desconocido
         this.snack.open('Ha ocurrido un error en el sistema', 'Aceptar', {
           duration: 5000,
           verticalPosition: 'top',
